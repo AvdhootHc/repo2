@@ -9,7 +9,7 @@ const CreateEventNavbar = () => {
   return (
     <>
       <nav>
-        <div className="flex border-b-[1px] h-20 items-center">
+        <div className="sm:flex hidden border-b-[1px] h-20 items-center">
           <span className="w-[27%] flex font-bold text-[22px] items-end justify-center">
             <Image
               alt="logo"
@@ -32,11 +32,11 @@ const CreateEventNavbar = () => {
             </span>
           </div>
 
-          <Button className="w-44 bg-gradient-to-b from-[#ED437E] to-[#FB76A4] rounded-[8px] ml-24 text-white shadow-md transition duration-200 ease-in-out hover:shadow-2xl">
+          <Button className="w-44 bg-gradient-to-b from-[#ED437E] to-[#FB76A4] rounded-[8px] ml-24 md:ml-16 text-white shadow-md transition duration-200 ease-in-out hover:shadow-2xl">
             <Plus className="h-4 mr-2" />
             Create event
           </Button>
-          <Avatar className=" ml-12">
+          <Avatar className="ml-8 md:mx-4">
             <AvatarFallback className="AvatarFallback bg-black text-white">
               A
             </AvatarFallback>
