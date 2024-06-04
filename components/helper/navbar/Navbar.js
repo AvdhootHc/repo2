@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MapPin, Plus, SearchIcon } from "lucide-react";
 import Image from "next/image";
 import logo from "../../../app/assets/Logo-WhiteandPnkT.svg";
@@ -8,9 +8,11 @@ import { Button } from "../../ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import { useMediaQuery } from "react-responsive";
 import { Input } from "@/components/ui/input";
+import "./style.css";
 
 export const Navbar = () => {
   const isSmallScreen = useMediaQuery({ query: "(min-width: 1024px)" });
+  const [searchContent, setsearchContent] = useState("");
 
   return (
     <div className="fixed top-0 max-w-full z-[100] w-full">
@@ -20,10 +22,16 @@ export const Navbar = () => {
           <SearchIcon className="text-white h-4 ml-4" />
           <Input
             placeholder="Search.."
-            className="border-none bg-transparent"
+            className="border-none bg-transparent text-white"
+            onChange={(e) => {
+              setsearchContent(e.target.value);
+            }}
           />
         </div>
-        <Button className="bg-gradient-to-b from-[#ED437E] to-[#FB76A4] text-white py-2 px-4 shadow-md focus:outline-none ml-10 rounded-[8px] w-24 transition duration-600 ease-in-out hover:shadow-2xl">
+        <Button
+          onClick={() => console.log("first")}
+          className="bg-gradient-to-b from-[#ED437E] to-[#FB76A4] text-white py-2 px-4 shadow-md focus:outline-none ml-10 rounded-[8px] w-24 transition duration-600 ease-in-out hover:shadow-2xl"
+        >
           <MapPin
             size={20}
             color="#f7f3f3"
