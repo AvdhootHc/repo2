@@ -8,11 +8,18 @@ import { Button } from "../../ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import { useMediaQuery } from "react-responsive";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
+
 import "./style.css";
 
 export const Navbar = () => {
   const isSmallScreen = useMediaQuery({ query: "(min-width: 1024px)" });
   const [searchContent, setsearchContent] = useState("");
+  const router = useRouter();
+
+  const handleCreateEventClick = () => {
+    router.push("/event/create");
+  };
 
   return (
     <div className="fixed top-0 max-w-full z-[100] w-full">
@@ -41,7 +48,10 @@ export const Navbar = () => {
 
           <text className="ml-2">Pune</text>
         </Button>
-        <Button className="w-44 bg-gradient-to-b from-[#ED437E] to-[#FB76A4] rounded-[8px] ml-24 text-white shadow-md transition duration-200 ease-in-out hover:shadow-2xl">
+        <Button
+          className="w-44 bg-gradient-to-b from-[#ED437E] to-[#FB76A4] rounded-[8px] ml-24 text-white shadow-md transition duration-200 ease-in-out hover:shadow-2xl"
+          onClick={handleCreateEventClick}
+        >
           <Plus className="h-4 mr-2" />
           Create event
         </Button>
