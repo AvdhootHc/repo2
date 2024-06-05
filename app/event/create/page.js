@@ -1,5 +1,4 @@
 "use client";
-
 import EventType from "@/components/helper/eventType/EventType";
 import React, { useState } from "react";
 import physical from "@/app/assets/physical-event.svg";
