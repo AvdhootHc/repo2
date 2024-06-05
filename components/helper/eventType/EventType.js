@@ -45,7 +45,7 @@ const EventType = ({
           <CardDescription className="sm:mt-5 mt-3">
             {description}
           </CardDescription>
-          <div className="mt-8">
+          <div className="mt-8 bg-gray-300 ">
             <Separator />
           </div>
           <CardFooter className="flex justify-center items-center sm:my-6 my-3">
