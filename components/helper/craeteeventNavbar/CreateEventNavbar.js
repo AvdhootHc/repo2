@@ -1,11 +1,14 @@
+"use client";
 import React from "react";
 import logo from "../../../app/assets/ticket 1.svg";
 import Image from "next/image";
 import { Calendar, FileBarChart, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useRouter } from "next/navigation";
 
 const CreateEventNavbar = () => {
+  const router = useRouter();
   return (
     <>
       <nav>
@@ -17,6 +20,9 @@ const CreateEventNavbar = () => {
               height={45}
               width={45}
               className="mr-4"
+              onClick={() => {
+                router.push("/");
+              }}
             />
             Bookyourtickets
           </span>

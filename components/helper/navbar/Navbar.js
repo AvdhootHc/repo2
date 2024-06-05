@@ -9,15 +9,24 @@ import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import { useMediaQuery } from "react-responsive";
 import { Input } from "@/components/ui/input";
 import "./style.css";
+import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
   const isSmallScreen = useMediaQuery({ query: "(min-width: 1024px)" });
   const [searchContent, setsearchContent] = useState("");
+  const router = useRouter();
 
   return (
     <div className="fixed top-0 max-w-full z-[100] w-full">
       <div className="flex items-center w-full bg-gray-800 bg-opacity-40 h-[80px]">
-        <Image src={logo} alt="logo" className="ml-6" />
+        <Image
+          src={logo}
+          alt="logo"
+          className="ml-6"
+          onClick={() => {
+            router.push("/");
+          }}
+        />
         <div className="searchbox flex items-center bg-[#F2F2F280] border-none w-[35%] h-11 ml-32 rounded-[2px]">
           <SearchIcon className="text-white h-4 ml-4" />
           <Input
